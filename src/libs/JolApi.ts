@@ -1,9 +1,7 @@
 import axios from 'axios'
 
-import { UserType } from '../types/User'
-
 export default class JolApi {
-    users: Array<UserType> = []
+    users: Array<any> = []
     jholderApi = 'https://jsonplaceholder.typicode.com/'
 
     async getAll() {
@@ -20,7 +18,7 @@ export default class JolApi {
                         user.username +
                         '%7D%7D.svg?options[mood][]=happy'
 
-                    this.users.push(user as UserType)
+                    this.users.push(user)
                 })
 
                 return this.users
